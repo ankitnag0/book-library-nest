@@ -13,7 +13,7 @@ datasource db {
 // Role can have either User or Admin
 model User {
   id    Int    @id @default(autoincrement())
-  email String
+  email String @unique
   hash  String
 
   role String
