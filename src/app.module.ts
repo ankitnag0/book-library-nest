@@ -4,9 +4,18 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { BookModule } from './book/book.module';
+import { AccessControlModule, ACGuard } from 'nest-access-control';
+import { RBAC_POLICY } from './auth/rbac-policy';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, AuthModule, BookModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    AccessControlModule.forRoles(RBAC_POLICY),
+    PrismaModule,
+    AuthModule,
+    BookModule,
+  ],
   controllers: [],
   providers: [],
 })

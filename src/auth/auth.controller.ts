@@ -14,6 +14,7 @@ import { GetUser } from './decorator';
 import { User } from '@prisma/client';
 import { UseGuards } from '@nestjs/common/decorators/core/use-guards.decorator';
 import { JwtGuard } from './guard';
+import { ACGuard, UseRoles } from 'nest-access-control';
 
 @Controller('auth')
 export class AuthController {

@@ -28,7 +28,7 @@ export class AuthService {
           email: signUpDto.email,
           hash,
           name: signUpDto.name,
-          role: signUpDto.role || 'user',
+          roles: signUpDto.roles,
         },
       });
 

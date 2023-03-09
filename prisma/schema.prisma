@@ -16,7 +16,7 @@ model User {
   email String @unique
   hash  String
 
-  role String
+  roles Role @default(user)
 
   name String
 
@@ -29,6 +29,11 @@ model User {
   requests Request[]
 
   @@map("users")
+}
+
+enum Role {
+  admin
+  user
 }
 
 model Book {
