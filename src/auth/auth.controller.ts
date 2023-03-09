@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignUpDto } from './dto/signup.dto';
 import { SignInDto } from './dto/signin.dto';
@@ -30,7 +22,12 @@ export class AuthController {
     return this.authService.singin(signInDto);
   }
 
-  @UseGuards(JwtGuard)
+  @UseGuards(JwtGuard, ACGuard)
+  @UseRoles({
+    possession: 'own',
+    action: 'read',
+    resource: 'me',
+  })
   @Get('me')
   getMe(@GetUser() user: User) {
     return user;
