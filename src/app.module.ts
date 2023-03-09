@@ -7,6 +7,7 @@ import { BookModule } from './book/book.module';
 import { AccessControlModule, ACGuard } from 'nest-access-control';
 import { RBAC_POLICY } from './auth/rbac-policy';
 import { APP_GUARD } from '@nestjs/core';
+import { RequestModule } from './request/request.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { APP_GUARD } from '@nestjs/core';
     PrismaModule,
     AuthModule,
     BookModule,
+    RequestModule,
   ],
   controllers: [],
   providers: [],

@@ -43,6 +43,8 @@ model Book {
 
   description String?
 
+  copies Int @default(1)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -58,8 +60,22 @@ model Request {
   book   Book @relation(fields: [bookId], references: [id])
   bookId Int
 
+  status RequestStatus @default(pending)
+  type   RequestType
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("requests")
+}
+
+enum RequestStatus {
+  pending
+  approved
+  rejected
+}
+
+enum RequestType {
+  checkout
+  return
 }

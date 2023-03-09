@@ -13,6 +13,7 @@ export class BookService {
         title: createBookDto.title,
         author: createBookDto.author,
         description: createBookDto.description,
+        copies: createBookDto.copies,
       },
     });
     return book;
@@ -29,6 +30,9 @@ export class BookService {
         id,
       },
     });
+    if (!book) {
+      throw new NotFoundException('Book not found');
+    }
     return book;
   }
 
