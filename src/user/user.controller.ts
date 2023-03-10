@@ -7,7 +7,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 import { ACGuard, UseRoles } from 'nest-access-control';
-import { JwtGuard } from 'src/auth/guard';
+import { JwtGuard } from '../auth/guard';
 import { UserService } from './user.service';
 
 @UseGuards(JwtGuard, ACGuard)

@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { SignUpDto } from './dto/signup.dto';
 import { SignInDto } from './dto/signin.dto';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { ConfigService } from '@nestjs/config';
 import * as argon from 'argon2';
 import { Prisma } from '@prisma/client';
@@ -45,7 +45,7 @@ export class AuthService {
     }
   }
 
-  async singin(singInDto: SignInDto) {
+  async signin(singInDto: SignInDto) {
     // find user by email
     const user = await this.prisma.user.findUnique({
       where: {

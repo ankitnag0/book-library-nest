@@ -19,7 +19,7 @@ export class AuthController {
 
   @Post('signin')
   signin(@Body() signInDto: SignInDto) {
-    return this.authService.singin(signInDto);
+    return this.authService.signin(signInDto);
   }
 
   @UseGuards(JwtGuard, ACGuard)

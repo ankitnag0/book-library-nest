@@ -3291,6 +3291,13 @@ jest-message-util@^29.5.0:
     slash "^3.0.0"
     stack-utils "^2.0.3"
 
+jest-mock-extended@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/jest-mock-extended/-/jest-mock-extended-3.0.3.tgz#570e33b099f8da87487acb4cd7d820712dcc3b52"
+  integrity sha512-yqpzvwFr2JWFArj4sPco4hPSanYH3erFgdkv7ahP8EMiAbVH+Rgjc8/cpAHJVG7+sZnQgl0AuTkxofD7eLJN+g==
+  dependencies:
+    ts-essentials "^7.0.3"
+
 jest-mock@^29.5.0:
   version "29.5.0"
   resolved "https://registry.npmjs.org/jest-mock/-/jest-mock-29.5.0.tgz"
@@ -4883,6 +4890,11 @@ trouter@^2.0.1:
   integrity sha512-kr8SKKw94OI+xTGOkfsvwZQ8mWoikZDd2n8XZHjJVZUARZT+4/VV6cacRS6CLsH9bNm+HFIPU1Zx4CnNnb4qlQ==
   dependencies:
     matchit "^1.0.0"
+
+ts-essentials@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-7.0.3.tgz#686fd155a02133eedcc5362dc8b5056cde3e5a38"
+  integrity sha512-8+gr5+lqO3G84KdiTSMRLtuyJ+nTBVRKuCrK4lidMPdVeEp0uqC875uE5NMcaA7YYMN7XsNiFQuMvasF8HT/xQ==
 
 ts-jest@29.0.3:
   version "29.0.3"
