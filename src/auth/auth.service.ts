@@ -20,7 +20,11 @@ export class AuthService {
   ) {}
   async signup(signUpDto: SignUpDto) {
     // hash the password
-    const hash = await argon.hash(signUpDto.password);
+    const hash = await argon.hash(signUpDto.password, {
+      salt: Buffer.from(
+        'howmuchwoodwouldawoodchuckchuckifawoodchuckcouldchuckwood',
+      ),
+    });
     // save the new user in the db
     try {
       const user = await this.prisma.user.create({
